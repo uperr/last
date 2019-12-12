@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python-day1中文# -- coding: UTF-8 --； Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。 单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入 __foo 代表类的私有成员，以双下划线开头和结尾的 foo 代表 Python 里特殊方法">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python--day1">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;python&#x2F;index.html">
+<meta property="og:site_name" content="hanhan&#39;home">
+<meta property="og:description" content="Python-day1中文# -- coding: UTF-8 --； Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。 单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入 __foo 代表类的私有成员，以双下划线开头和结尾的 foo 代表 Python 里特殊方法">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q6YB7R.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q66gIO.png">
+<meta property="og:updated_time" content="2019-12-12T13:02:36.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q6YB7R.md.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/12/python/"/>
+
+
+
+
+
+  <title>python--day1 | hanhan'home</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hanhan'home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dele">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/x256.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hanhan'home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python--day1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-12T16:28:12+08:00">
+                2019-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Python-day1"><a href="#Python-day1" class="headerlink" title="Python-day1"></a>Python-day1</h1><p>中文# -<em>- coding: UTF-8 -</em>-；</p>
+<p><em>Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。</em></p>
+<p>单下划线开头 <strong>_foo</strong> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <strong>from xxx import *</strong> 而导入</p>
+<p><strong>__foo</strong> 代表类的私有成员，以双下划线开头和结尾的 <strong><strong>foo</strong></strong> 代表 Python 里特殊方法专用的标识，如 <strong><strong>init</strong>()</strong> 代表类的构造函数。</p>
+<p>Python 可以同一行显示多条语句，方法是用分号 <strong>;</strong> 分开，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (<span class="string">'hello'</span>);<span class="keyword">print</span> (<span class="string">'runoob'</span>);</span><br><span class="line">hello</span><br><span class="line">runoob</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://imgse.com/i/Q6YB7R" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/12/12/Q6YB7R.md.png" alt="Q6YB7R.md.png"></a></p>
+<a id="more"></a>
+
+<p>python 最具特色的就是用缩进来写模块。</p>
+<p>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
+<p>但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br></pre></td></tr></table></figure>
+
+<h5 id="Python注释"><a href="#Python注释" class="headerlink" title="Python注释"></a><strong>Python注释</strong></h5><p>python中单行注释采用 # 开头。</p>
+<p>python 中多行注释使用三个单引号(‘’’)或三个双引号(“””)。</p>
+<p>空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<p>记住：空行也是程序代码的一部分。</p>
+<h4 id="print-输出"><a href="#print-输出" class="headerlink" title="print 输出"></a>print 输出</h4><p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 <strong>,</strong>。</p>
+<h5 id="命令行调入-py文件"><a href="#命令行调入-py文件" class="headerlink" title="命令行调入.py文件"></a>命令行调入.py文件</h5><p>cmd 后，直接 &gt;python D:\test.py //拿在D盘的.py文件演示</p>
+<p><img src="https://s2.ax1x.com/2019/12/12/Q66gIO.png" alt="Q66gIO.png"></p>
+<h4 id="等待用户输入"><a href="#等待用户输入" class="headerlink" title="等待用户输入"></a>等待用户输入</h4><p>下面的程序执行后就会等待用户输入，按回车键后就会退出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pip._vendor.distlib.compat <span class="keyword">import</span> raw_input</span><br><span class="line"></span><br><span class="line">print(<span class="string">"x\n"</span>)</span><br><span class="line">raw_input(<span class="string">"按下 enter 键退出，其他任意键显示...\n"</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="看到这里我不觉想了想，为什么不直接学3-8呢，醉了"><a href="#看到这里我不觉想了想，为什么不直接学3-8呢，醉了" class="headerlink" title="看到这里我不觉想了想，为什么不直接学3.8呢，醉了"></a>看到这里我不觉想了想，为什么不直接学3.8呢，醉了</h4><p>Python 3 源码文件以 <strong>UTF-8</strong> 编码，所有字符串都是 unicode 字符串。</p>
+<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ul>
+<li>第一个字符必须是字母表中字母或下划线 <strong>_</strong> 。</li>
+<li>标识符的其他的部分由字母、数字和下划线组成。</li>
+<li>标识符对大小写敏感。</li>
+</ul>
+<p>在 Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了</p>
+<h4 id="数字-Number-类型"><a href="#数字-Number-类型" class="headerlink" title="数字(Number)类型"></a>数字(Number)类型</h4><p>python中数字有四种类型：整数、布尔型、浮点数和复数。</p>
+<ul>
+<li><strong>int</strong> (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</li>
+<li><strong>bool</strong> (布尔), 如 True。</li>
+<li><strong>float</strong> (浮点数), 如 1.23、3E-2</li>
+<li><strong>complex</strong> (复数), 如 1 + 2j、 1.1 + 2.2j</li>
+</ul>
+<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">str=<span class="string">'Runoob'</span></span><br><span class="line"> </span><br><span class="line">print(str)                 <span class="comment"># 输出字符串</span></span><br><span class="line">print(str[<span class="number">0</span>:<span class="number">-1</span>])           <span class="comment"># 输出第一个到倒数第二个的所有字符</span></span><br><span class="line">print(str[<span class="number">0</span>])              <span class="comment"># 输出字符串第一个字符</span></span><br><span class="line">print(str[<span class="number">2</span>:<span class="number">5</span>])            <span class="comment"># 输出从第三个开始到第五个的字符</span></span><br><span class="line">print(str[<span class="number">2</span>:])             <span class="comment"># 输出从第三个开始后的所有字符</span></span><br><span class="line">print(str * <span class="number">2</span>)             <span class="comment"># 输出字符串两次</span></span><br><span class="line">print(str + <span class="string">'你好'</span>)        <span class="comment"># 连接字符串</span></span><br><span class="line"> </span><br><span class="line">print(<span class="string">'------------------------------'</span>)</span><br><span class="line"> </span><br><span class="line">print(<span class="string">'hello\nrunoob'</span>)      <span class="comment"># 使用反斜杠(\)+n转义特殊字符</span></span><br><span class="line">print(<span class="string">r'hello\nrunoob'</span>)     <span class="comment"># 在字符串前面添加一个 r，表示原始字符串，不会发生转义</span></span><br><span class="line">Runoob</span><br><span class="line">Runoo</span><br><span class="line">R</span><br><span class="line">noo</span><br><span class="line">noob</span><br><span class="line">RunoobRunoob</span><br><span class="line">Runoob你好</span><br><span class="line">------------------------------</span><br><span class="line">hello</span><br><span class="line">runoob</span><br><span class="line">hello\nrunoob</span><br></pre></td></tr></table></figure>
+
+<p><strong>等待用户输入</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/12/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" rel="next" title="古典密码">
+                <i class="fa fa-chevron-left"></i> 古典密码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/x256.gif"
+                alt="dele" />
+            
+              <p class="site-author-name" itemprop="name">dele</p>
+              <p class="site-description motion-element" itemprop="description">点滴记录</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-day1"><span class="nav-number">1.</span> <span class="nav-text">Python-day1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Python注释"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">Python注释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print-输出"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">print 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行调入-py文件"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">命令行调入.py文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等待用户输入"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">等待用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看到这里我不觉想了想，为什么不直接学3-8呢，醉了"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">看到这里我不觉想了想，为什么不直接学3.8呢，醉了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字-Number-类型"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">数字(Number)类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">字符</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dele</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
