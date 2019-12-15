@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q6YB7R.md.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q66gIO.png">
-<meta property="og:updated_time" content="2019-12-12T13:02:36.555Z">
+<meta property="og:updated_time" content="2019-12-12T14:43:29.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Q6YB7R.md.png">
 
@@ -370,9 +370,35 @@
 <li><strong>float</strong> (浮点数), 如 1.23、3E-2</li>
 <li><strong>complex</strong> (复数), 如 1 + 2j、 1.1 + 2.2j</li>
 </ul>
-<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">str=<span class="string">'Runoob'</span></span><br><span class="line"> </span><br><span class="line">print(str)                 <span class="comment"># 输出字符串</span></span><br><span class="line">print(str[<span class="number">0</span>:<span class="number">-1</span>])           <span class="comment"># 输出第一个到倒数第二个的所有字符</span></span><br><span class="line">print(str[<span class="number">0</span>])              <span class="comment"># 输出字符串第一个字符</span></span><br><span class="line">print(str[<span class="number">2</span>:<span class="number">5</span>])            <span class="comment"># 输出从第三个开始到第五个的字符</span></span><br><span class="line">print(str[<span class="number">2</span>:])             <span class="comment"># 输出从第三个开始后的所有字符</span></span><br><span class="line">print(str * <span class="number">2</span>)             <span class="comment"># 输出字符串两次</span></span><br><span class="line">print(str + <span class="string">'你好'</span>)        <span class="comment"># 连接字符串</span></span><br><span class="line"> </span><br><span class="line">print(<span class="string">'------------------------------'</span>)</span><br><span class="line"> </span><br><span class="line">print(<span class="string">'hello\nrunoob'</span>)      <span class="comment"># 使用反斜杠(\)+n转义特殊字符</span></span><br><span class="line">print(<span class="string">r'hello\nrunoob'</span>)     <span class="comment"># 在字符串前面添加一个 r，表示原始字符串，不会发生转义</span></span><br><span class="line">Runoob</span><br><span class="line">Runoo</span><br><span class="line">R</span><br><span class="line">noo</span><br><span class="line">noob</span><br><span class="line">RunoobRunoob</span><br><span class="line">Runoob你好</span><br><span class="line">------------------------------</span><br><span class="line">hello</span><br><span class="line">runoob</span><br><span class="line">hello\nrunoob</span><br></pre></td></tr></table></figure>
+<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">str=<span class="string">'Runoob'</span></span><br><span class="line"> </span><br><span class="line">print(str)                 <span class="comment"># 输出字符串</span></span><br><span class="line">print(str[<span class="number">0</span>:<span class="number">-1</span>])           <span class="comment"># 输出第一个到倒数第二个的所有字符</span></span><br><span class="line">print(str[<span class="number">0</span>])              <span class="comment"># 输出字符串第一个字符</span></span><br><span class="line">print(str[<span class="number">2</span>:<span class="number">5</span>])            <span class="comment"># 输出从第三个开始到第五个的字符</span></span><br><span class="line">print(str[<span class="number">2</span>:])             <span class="comment"># 输出从第三个开始后的所有字符</span></span><br><span class="line">print(str * <span class="number">2</span>)             <span class="comment"># 输出字符串两次</span></span><br><span class="line">print(str + <span class="string">'你好'</span>)        <span class="comment"># 连接字符串</span></span><br><span class="line"> </span><br><span class="line">print(<span class="string">'------------------------------'</span>)</span><br><span class="line"> </span><br><span class="line">print(<span class="string">'hello\nrunoob'</span>)      <span class="comment"># 使用反斜杠(\)+n转义特殊字符</span></span><br><span class="line">print(<span class="string">r'hello\nrunoob'</span>)     <span class="comment"># 在字符串前面添加一个 r，表示原始字符串，不会发生转义</span></span><br><span class="line"><span class="keyword">print</span> (str + <span class="string">"TEST"</span>) <span class="comment"># 连接字符串</span></span><br><span class="line">Runoob</span><br><span class="line">Runoo</span><br><span class="line">R</span><br><span class="line">noo</span><br><span class="line">noob</span><br><span class="line">RunoobRunoob</span><br><span class="line">Runoob你好</span><br><span class="line">------------------------------</span><br><span class="line">hello</span><br><span class="line">runoob</span><br><span class="line">hello\nrunoob</span><br></pre></td></tr></table></figure>
 
 <p><strong>等待用户输入</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">input(<span class="string">"\n\n按下 enter 键后退出。"</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="多个语句构成代码组"><a href="#多个语句构成代码组" class="headerlink" title="多个语句构成代码组"></a>多个语句构成代码组</h4><p>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+<h4 id="Print-输出"><a href="#Print-输出" class="headerlink" title="Print 输出"></a>Print 输出</h4><p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 <strong>end=””</strong>：</p>
+<h4 id="import-与-from…import"><a href="#import-与-from…import" class="headerlink" title="import 与 from…import"></a>import 与 from…import</h4><p>在 python 用 <strong>import</strong> 或者 <strong>from…import</strong> 来导入相应的模块。</p>
+<p>将整个模块(somemodule)导入，格式为： <strong>import somemodule</strong></p>
+<p>从某个模块中导入某个函数,格式为： <strong>from somemodule import somefunction</strong></p>
+<p>从某个模块中导入多个函数,格式为： <strong>from somemodule import firstfunc, secondfunc, thirdfunc</strong></p>
+<p><strong>Python3 基本数据类型</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">counter = <span class="number">100</span>          <span class="comment"># 整型变量</span></span><br><span class="line">miles   = <span class="number">1000.0</span>       <span class="comment"># 浮点型变量</span></span><br><span class="line">name    = <span class="string">"runoob"</span>     <span class="comment"># 字符串</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (counter)</span><br><span class="line"><span class="keyword">print</span> (miles)</span><br><span class="line"><span class="keyword">print</span> (name)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1、Python可以同时为多个变量赋值，如a, b = 1, 2。</li>
+<li>2、一个变量可以通过赋值指向不同类型的对象。</li>
+<li>3、数值的除法包含两个运算符：<strong>/</strong> 返回一个浮点数，<strong>//</strong> 返回一个整数。</li>
+<li>4、在混合计算时，Python会把整型转换成为浮点数。</li>
+</ul>
+<h4 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a><strong>List（列表）</strong></h4><p>List（列表） 是 Python 中使用最频繁的数据类型。</p>
+<p>列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。</p>
+<p>列表是写在方括号 <strong>[]</strong> 之间、用逗号分隔开的元素列表。</p>
+<p>和字符串一样，列表同样可以被索引和截取，列表被截取后返回一个包含所需元素的新列表。</p>
+<p>列表截取的语法格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量[头下标:尾下标]</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -412,6 +438,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/15/python2/" rel="prev" title="python--day2">
+                python--day2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,7 +522,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-day1"><span class="nav-number">1.</span> <span class="nav-text">Python-day1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Python注释"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">Python注释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print-输出"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">print 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行调入-py文件"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">命令行调入.py文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等待用户输入"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">等待用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看到这里我不觉想了想，为什么不直接学3-8呢，醉了"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">看到这里我不觉想了想，为什么不直接学3.8呢，醉了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字-Number-类型"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">数字(Number)类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">字符</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-day1"><span class="nav-number">1.</span> <span class="nav-text">Python-day1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Python注释"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">Python注释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print-输出"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">print 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行调入-py文件"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">命令行调入.py文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等待用户输入"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">等待用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看到这里我不觉想了想，为什么不直接学3-8呢，醉了"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">看到这里我不觉想了想，为什么不直接学3.8呢，醉了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字-Number-类型"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">数字(Number)类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个语句构成代码组"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">多个语句构成代码组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Print-输出"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">Print 输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import-与-from…import"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">import 与 from…import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List（列表）"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">List（列表）</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
