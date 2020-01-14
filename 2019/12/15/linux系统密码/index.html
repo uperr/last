@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux  crypt," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="点滴记录">
-<meta name="keywords" content="free">
+<meta name="description" content="Linux系统–密码加密机制  Linux通过加密算法（Encryption Algorithm）来产生加密后的密码数据。   目前的 Linux 提供下面两种加密算法：MD5和DES。MD5是Linux默认的加密机制，是Red Hat Enterprise Linux建议使用的加密算法，支持 255 个字符的密码数据，安全性高出DES。   DES是传统 UNIX 使用的加密算法，只能支持八个字">
+<meta name="keywords" content="linux  crypt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux系统密码">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;linux%E7%B3%BB%E7%BB%9F%E5%AF%86%E7%A0%81&#x2F;index.html">
 <meta property="og:site_name" content="hanhan&#39;home">
-<meta property="og:description" content="点滴记录">
+<meta property="og:description" content="Linux系统–密码加密机制  Linux通过加密算法（Encryption Algorithm）来产生加密后的密码数据。   目前的 Linux 提供下面两种加密算法：MD5和DES。MD5是Linux默认的加密机制，是Red Hat Enterprise Linux建议使用的加密算法，支持 255 个字符的密码数据，安全性高出DES。   DES是传统 UNIX 使用的加密算法，只能支持八个字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-15T12:22:04.228Z">
+<meta property="og:updated_time" content="2019-12-15T12:34:10.299Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -228,6 +228,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -328,7 +348,118 @@
       
 
       
-        
+        <h1 id="Linux系统–密码加密机制"><a href="#Linux系统–密码加密机制" class="headerlink" title="Linux系统–密码加密机制"></a>Linux系统–密码加密机制</h1><p>  Linux通过加密算法（Encryption Algorithm）来产生加密后的密码数据。</p>
+<p>  目前的 Linux 提供下面两种加密算法：MD5和DES。MD5是Linux默认的加密机制，是Red Hat Enterprise Linux建议使用的加密算法，支持 255 个字符的密码数据，安全性高出DES。</p>
+<p>  DES是传统 UNIX 使用的加密算法，只能支持八个字符内的密码数据，如果密码超过八个字符，DES 会忽略第八个字符以后的密码，其安全性会相对比较差。</p>
+<p>  DES与MD5都只是单向式哈希算法（One Way Hash Algorithms）。</p>
+<a id="more"></a>
+
+
+
+<h2 id="MD5-加密算法"><a href="#MD5-加密算法" class="headerlink" title="MD5**加密算法**"></a><strong>MD5**</strong>加密算法**</h2><p>  MD5将任意长度的“字节串”映射为一个128bit的大整数。</p>
+<p>  例如：我们将字符串“aaa”经过MD5运算后结果为：47BCE5C74F589F4867DBD57E9CA9F808，因为MD5算法的不可逆性，不可能根据这些信息回逆字符串“aaa”，因此，密码是安全的。MD5算法可以叙述为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过一系列的处理后，算法的输出由4个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。</p>
+<h2 id="DES-加密算法"><a href="#DES-加密算法" class="headerlink" title="DES**加密算法**"></a><strong>DES**</strong>加密算法**</h2><p>  DES是一个对称算法：加密和解密用的是同一算法（除密钥编排不同以外），既可用于加密又可用于解密。它的核心技术是：在相信复杂函数可以通过简单函数迭代若干圈得到的原则下，利用F函数及对合等运算，充分利用非线性运算。DES以64位为分组对数据加密。每组64位，最后一组若不足64位，以“0”补齐。密钥通常表示为64位的数，但每个第8位都用作奇偶校验，可以忽略，所以密钥的长度为56位，密钥可以是任意的56位的数，且可在任意的时候改变。其中极少量的数被认为是弱密钥，但能容易地避开它们，所有的保密性依赖于密钥。DES 对 64 位的明文分组进行操作。通过一个初始置换，将明文分组分成左半部分（L0）和右半部分（R0），各32位长。R0与子密钥K1进行F函数的运算，输出32位的数，然后与L0执行异或操作得到R1，L1 则是上一轮的 R0，如此经过 16 轮后，左、右半部分合在一起，经过一个末置换（初始置换的逆置换），这样该算法就完成了。</p>
+<h2 id="Linux-密码文件"><a href="#Linux-密码文件" class="headerlink" title="Linux**密码文件**"></a><strong>Linux**</strong>密码文件**</h2><p>​    几乎所有的Linux操作系统的密码文件格式都雷同，由于Linux使用不可逆的加密算法来加密密码，因此从密文是得不到明文的。传统的存放用户账号及密码信息的文件为/etc/passwd，但由于该文件为全局可读的，加密的算法是公开的，恶意用户可以窃取该文件，穷举出所有可能的明文并通过相同的算法计算出密文进行比较直到相同，以破解密码口令。针对这种安全问题，Linux普遍采用了“shadow”机制，将加密的口令转移到/etc/shadow文件里，该文件只为root超级用户可读，而同时/etc/passwd文件的密文域显示为一个x，从而最大限度减少密文泄露的机会。</p>
+<p>总之，Linux操作系统采用了UNIX传统的方法，把全部的用户信息保存为普通的文本文件。用户可以通过对这些文件进行修改来管理用户和组。</p>
+<p>用户账号文件——passwd</p>
+<p>/etc/passwd文件是UNIX安全的关键文件之一。该文件用于用户登录时校验用户的登录名、加密的口令数据项、用户ID(UID)、默认的用户分组ID(GID)、用户信息、用户登录子目录以及登录后使用的shell。这个文件的每一行保存一个用户的资料，而用户资料的每一个数据项采用冒号“:”分隔。如下所示：</p>
+<p>LOGNAME:PASSWORD:UID:GID:USERINFO:HOME:SHELL</p>
+<p>每行的头两项是登录名和加密后的口令，后面的两个数是UID和GID，接着的一项是系统管理员想写入的有关该用户的任何信息，最后两项是两个路径名：一个是分配给用户的HOME目录，另一个是用户登录后将执行的shell(若为空格则默认为/bin/sh)。</p>
+<p>下面是一个实际的系统用户的例子：</p>
+<p>cracker:x:6018: 6018: cracker:/home/ cracker:/bin/bash</p>
+<p>该用户的基本信息为：</p>
+<p>登录名：cracker</p>
+<p>加密的口令表示：x</p>
+<p>UID：6018</p>
+<p>GID：6018</p>
+<p>用户信息：cracker</p>
+<p>HOME目录：/home/ cracker</p>
+<p>登录后执行的shell：/bin/bash</p>
+<p>用户的登录名是用户用来登录的识别，由用户自行选定，主要由方便用户记忆或者具有一定含义的字符串组成。</p>
+<p>所有用户的口令的存放都是加密的，通常采用的是不可逆的加密算法，比如DES(Data Encryption Standard，数据加密标准)。当用户在登录提示符处输入它们的口令时，输入的口令将由系统进行加密。再把加密后的数据与机器中用户的口令数据项进行比较。如果这两个加密数据匹配，就可以让这个用户进入系统。在/etc/passwd文件中，UID信息也很重要。系统使用UID而不是登录名区别用户。一般来说，用户的UID应当是独一无二的，其他用户不应当有相同的UID数值，只有UID等于0时可以例外。任何拥有0值UID的用户都具有根用户(系统管理员)访问权限，因此具备对系统的完全控制。通常，UID为0这个特殊值的用户的登录名是“root”。根据惯例，从0到99的UID保留用做系统用户的UID。如果在/etc/passwd文件中有两个不同的入口项有相同的UID，则这两个用户对文件具有相同的存取权限。</p>
+<p>每一个用户都需要有地方保存专属于自己的配置文件。这需要让用户工作在自己定制的操作环境中，以免改变其他用户定制的操作环境，这个地方就叫做用户登录子目录。在这个子目录中，用户不仅可以保存自己的配置文件，还可以保存自己日常工作用到的各种文件。出于一致性的考虑，大多数站点都从/home开始安排用户登录子目录，并把每个用户的子目录命名为其上机使用的登录名。</p>
+<p>当用户登录进入系统时，都有一个属于自己的操作环境。用户遇到的第一个程序叫做shell。在Linux系统里，大多数shell都是基于文本的。Linux操作系统带有好几种shell供用户选用。用户可以在/etc/shells文件中看到它们中的绝大多数。用户可以根据自己的喜好来选用不同的shell进行操作。按照最严格的定义，在上面所介绍的/etc/passwd文件中，每个用户的口令数据项中并没有定义需要运行某个特定的shell，其中列出的是这个用户上机后第一个运行的程序是哪个。综上所述，通过使用cat命令查看/etc/passwd文件(#cat /etc/passwd)。</p>
+<p>用户影子文件——shadow</p>
+<p>Linux使用不可逆的加密算法如DES来加密口令，由于加密算法是不可逆的，所以黑客从密文是得不到明文的。但/etc/passwd文件是全局可读的，加密的算法是公开的，恶意用户取得了/etc/passwd文件，便极有可能破解口令。而且，在计算机性能日益提高的今天，对账号文件进行字典攻击的成功率会越来越高，速度越来越快。因此，针对这种安全问题，Linux/UNIX广泛采用了“shadow(影子)文件”机制，将加密的口令转移到/etc/shadow文件里，该文件只为root超级用户可读，而同时/etc/passwd文件的密文域显示为一个x，从而最大限度地减少了密文泄露的机会。</p>
+<p>/etc/shadow文件的每行是8个冒号分割的9个域，格式如下：</p>
+<p>username: passwd: lastchg: min: max: warn: inactive: expire: flag</p>
+<p>如下所示的是一个系统中实际影子文件的例子：</p>
+<p>liyang:$1$ciY58zQZ$iKVHLSVZZgM75.lGp5Rmv.:14633:0:99999:7:::</p>
+<p>我们对最后一个用户的信息进行解释，该信息表明了如下含义：</p>
+<p>用户登录名：liyang</p>
+<p>用户加密的口令：liyang后紧跟的一段乱码信息$1$ciY58zQZ$iKVHLSVZZgM75.lGp5Rmv.</p>
+<p>从1970年1月1日起到上次修改口令所经过的天数天数为：14633天</p>
+<p>需要多少天才能修改这个命令：0天</p>
+<p>该口令永不过期：采用99999表示</p>
+<p>要在口令失效前7天通知用户，发出警告</p>
+<p>禁止登录前用户名还有效的天数未定义，以“:”表示</p>
+<p>用户被禁止登录的时间未定义，以“:”表示</p>
+<p>保留域，未使用，以“:”表示</p>
+<p>组账号文件——group</p>
+<p>/etc/passwd文件中包含着每个用户默认的分组ID(GID)。在/etc/group文件中，这个GID被映射到该用户分组的名称以及同一分组中的其他成员去。</p>
+<p>/etc/group文件含有关于小组的信息，/etc/passwd中的每个GID在文件中应当有相应的入口项，入口项中列出了小组名和小组中的用户，这样可方便地了解每个小组的用户，否则必须根据GID在/etc/passwd文件中从头至尾地寻找同组用户，这提供了一个比较快捷的寻找途径。/etc/group文件对小组的许可权限的控制并不是必要的，因为系统用来自于/etc/passwd文件的UID、GID来决定文件存取权限，即使/etc/group文件不存在于系统中，具有相同的GID用户也可以小组的存取许可权限共享文件。小组就像登录用户一样可以有口令。如果/etc/group文件入口项的第二个域为非空(通常用x表示)，则将被认为是加密口令。/etc/group文件中每一行的内容如下所示：</p>
+<p>用户分组名</p>
+<p>加过密的用户分组口令</p>
+<p>用户分组ID号(GID)</p>
+<p>以逗号分隔的成员用户清单</p>
+<p>如下是系统中一个具体的/etc/group文件中记录的例子：</p>
+<p>adm:x:4:root,adm,daemon</p>
+<p>以上面文件第四行为例子，它说明在系统存在一个adm的用户组，它的信息如下：</p>
+<p>用户分组名为adm</p>
+<p>用户组口令已经加密，用“x”表示</p>
+<p>GID为4</p>
+<p>同组的成员用户有：root，adm，daemon</p>
+<p>组账号文件——gshadow</p>
+<p>如同用户账号文件的作用一样，组账号文件也是为了加强组口令的安全性，防止黑客对其实行的暴力攻击，而采用的一种将组口令与组的其他信息相分离的安全机制。其格式如下所示内容：</p>
+<p>用户组名</p>
+<p>加密的组口令</p>
+<p>组成员列表</p>
+<p>下面是系统中一个具体的/etc/gshadow文件的例子：</p>
+<p>mail:::mail,postfix,exim</p>
+<p>以组mail为例，其加密后的组口令被隐藏，其组成员包括mail、postfix和exim。其他的以“::”结尾的组表明没有组成员，但是用户可以自行添加。</p>
+<p>John the Ripper工具简介</p>
+<p>John the Ripper是一个工具软件，用于在已知密文的情况下尝试破解出明文的破解密码软件。目前的最新版本是JOHN1.7版，主要支持对DES、MD5两种加密方式的密文进行破解工作。它可以工作于多中不同的机型以及多种不同的操作系统之下，包括：Linux x86、freeBSD、x86、Solaris、SPARC、OSF/1 Alpha、DOS、WinNT/WinXP系列等。</p>
+<p>John the Ripper 1.7是目前比较好的破解密码工具，在解密过程中会自动定时存盘，用户可以强迫中断解密过程（使用ctrl+c组合键），下次还可以从中断的地方继续进行下去（john-restore命令）。任何时候敲击键盘，用户都可以看到整个解密的进行情况，所有已经被破解的密码会被保存在当前目录下的JOHN.POT文件中，SHADOW中所有密文相同的用户会被归成一类，这样JOHN就不会进行无谓的重复劳动了。在程序的设计中，关键的密码生成的条件被放在JOHN.INI文件中，用户可以自行修改设置，不仅支持单词类型的变化，而且支持自己编写C的小程序限制密码的取值方式。</p>
+<p>在使用该软件前，我们可以从网上下载其最新版本john-1.7.3.4 for Linux版本，它包含DOC、SRC和RUN三个目录，在SRC目录下，在机器上执行如下命令即可：</p>
+<p>#make</p>
+<p>#make clean linux-x86-any</p>
+<p>安装好后，可以切换到RUN目录下，进行测试，如下所示：</p>
+<p>#cd ../run</p>
+<p>#./john –test</p>
+<p>John the ripper提供了如下多达10余种的命令，供用户选择使用：</p>
+<p>pwfile:[,..]：用于指定存放密文所在的文件名，（可以输入多个，文件名用“，”分隔，也可以使用*或者 这两个通配符引用一批文件）。也可以不使用此参数，将文件名放在命令行的最后即可。</p>
+<p>wordfile:&lt;字典文件名&gt;-stdin：指定的用于解密用的字典文件名。也可以使用STDIO来输入，就是在键盘中输入。</p>
+<p>rules：在解密过程中使用单词规则变化功能。如将尝试cool单词的其他可能，如COOLER、Cool等，详细规则可以在JOHN.INI文件中的[List.Rules:Wordlist]部分查到。</p>
+<p>incremental[:&lt;模式名称&gt;]：使用遍历模式，就是组合密码的所有可能情况，同样可以在JOHN.INI文件中的[Incremental:*****]部分查到。</p>
+<p>single：使用单一模式进行解密，主要是根据用户名产生变化来猜测解密，可以消灭比较低级的用户。其组合规则可以在JOHN.INI文件中的[List.Rules:Single]部分查到，我们在下面详细解释。</p>
+<p>external:&lt;模式名称&gt;：使用自定义的扩展解密模式,用户可以在john.ini中定义自己需要的密码组合方式。JOHN也在INI文件中给出了几个示例，在INI文件的[List.External:<strong>**</strong>]中所定义的自订破解功能。</p>
+<p>restore[:&lt;文件名&gt;]：继续上次的破解工作，JOHN被中断后，当前的解密进度情况被存放在RESTORE文件中，用户可以拷贝这个文件到一个新的文件中。如果参数后不带文件名，JOHN默认使用RESTORE文件。</p>
+<p>makechars:&lt;文件名&gt;：制作一个字符表,用户所指定的文件如果存在，则将会被覆盖。JOHN尝试使用内在规则在相应密钥空间中生成一个最有可能击中的密码组合，它会参考在JOHN.POT文件中已经存在的密钥。</p>
+<p>show：显示已经破解出的密码，因为JOHN.POT文件中并不包含用户名，同时用户应该输入相应的包含密码的文件名，JOHN会输出已经被解密的用户连同密码的详细表格。</p>
+<p>test：测试当前机器运行JOHN的解密速度，需要1分钟，它会得出在当前的情况下解密的各种可能情况下相应的解密速度，如同时解密100个用户时的平均速度，使用 遍历法解密模式时解密的速度。salts指用户个数，如果给出的对于100个用户解密的平均速度为18000次/秒，那么表明同时对100个用户解密，解 密的速度为每个180次/秒。因为绝大多数的时间被用于密钥比较过程中了。所以应该对用户进行挑选。</p>
+<p>users:[,..]：只破解某类型的用户或者属于某个组的用户。如果得到的PASSWD文件没有包含密文，那么在得到SHADOW后应该进行组合，JOHN的附带程序 UNSHADOW.EXE可以完成这一过程，当然了，用户也可以手工做。一般的能够进入CSH的用户都是解密的首选对象。也可以要UID=0的ROOT级别 的用户。</p>
+<p>shells:[!][,..]：和上面的参数一样，这一选项可以选择对所有可以使用shell的用户进行解密，对其他用户不予理睬。“!”就是表示不要某些类型的用户。例如：“-shells：csh”。</p>
+<p>timeout:&lt;几分钟&gt;：指定解密持续的时间是几分钟，到时间JOHN自动停止运行。</p>
+<p>beep-quiet：当解密出密码时是否要让PC喇叭叫一下，以提醒用户。</p>
+<p>noname-nohash：不使用内存来保存“用户名”等内容。</p>
+<p>des-md5：指定使用的解密方式是解DES还是MD5，对于解密DES密码不用理会这一选项。</p>
+<p>除了口令破解程序之外，在这个软件包中，还包含了其他几个实用工具，它们对于实现口令破解都有一定的帮助，这些工具都放置在run目录下，下面分别予以简要介绍。</p>
+<p>(1)unshadow PASSWORD-FILE SHADOW-FILE</p>
+<p>unshadow命令将passwd文件和shadow文件组合在一起，其结果用于John破解程序。通常应该使用重定向方法将这个程序的结果保存在文件中，之后将文件传递给John破解程序。</p>
+<p>(2)unafs DATABASE-FILE CELL-NAME</p>
+<p>unafs从二进制AFS数据库中提取口令散列值，并生成John可用的输出，通常应该把这个输出重定向到文件中。</p>
+<p>(3)unique OUTPUT-FILE</p>
+<p>删除字典表中的重复词汇，但不改变字典表中各词条项的顺序。</p>
+<p>安装好后，我们可以灵活使用如下几种方式来对自己的账户密码进行测试：</p>
+<p>通常情况下，许多用户的密码命名方式非常简单，比如foo、hello、world等等，或者很多都是与用户名相同的密码口令，那么我们一般可以先采用简单解密方式来对系统中的密码进行简单的初步试探，如果发现能够成功破解，那么就需要对这些密码口令的强度进行加强，如下所示：</p>
+<p>#./john –single “/etc/shadow”</p>
+<p>Loaded 2 password hashes with 3 different salts (FreeBSD MD5 [32/32])</p>
+<p>liyang (liyang)</p>
+<p>guesses: 1 time: 0:00:00:00 100% c/s: 6975 trying: 999991900</p>
+<p>在上述命令中，我们发现系统存在一个liyang用户，其用户名和密码均为liyang，因而通过最简单的方式便能将其发现和利用，如果为黑客破解则将造成不可设想的后果，因而我们的用户应该立即根据此种情况进行口令加强。</p>
+<p>其次，用户可以使用字典文件来对系统用户的恶密码强度进行试探和测试。人们常用hello、superman、cooler、asdfgh、123456等作为自己的密码。而-rules参数则在此基础上再加上些变化，如字典中有单词cool，则JOHN还会尝试使用cooler、CoOl、Cool等单词变化进行解密。一般视SHADOW中的用户多少及用户的字典大小、用户的机器速度，解密时间从几小时到几天不等。下面给出使用该方式进行解密的例子，假设我们已经生成了一个password.lst文件，其中包含了常用的以字典单词为依据的密码，那么我们对系统中的用户密码使用该方式进行试探破解，由于字典中保留了young这样一个单词，因而用户google的密码所以也被试探出来，网络管理员同样需要对该密码进行加固，比如添加适当的后缀、字母和数字等：</p>
+<p># ./john –wordlist=password.lst “/etc/shadow”Loaded 2 password hashes with 2 different salts (FreeBSD MD5 [32/32])young (google)guesses: 1 time: 0:00:00:01 100% c/s: 3571 trying: zhongguo</p>
+
       
     </div>
     
@@ -342,6 +473,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux-crypt/" rel="tag"># linux  crypt</a>
+          
+        </div>
       
 
       
@@ -361,6 +498,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/15/windows%E7%B3%BB%E7%BB%9F%E5%AF%86%E7%A0%81/" rel="prev" title="windows系统密码">
+                windows系统密码 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -412,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -432,7 +582,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -445,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -469,6 +619,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux系统–密码加密机制"><span class="nav-number">1.</span> <span class="nav-text">Linux系统–密码加密机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD5-加密算法"><span class="nav-number">1.1.</span> <span class="nav-text">MD5**加密算法**</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES-加密算法"><span class="nav-number">1.2.</span> <span class="nav-text">DES**加密算法**</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-密码文件"><span class="nav-number">1.3.</span> <span class="nav-text">Linux**密码文件**</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -482,7 +648,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
