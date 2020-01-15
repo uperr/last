@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>next主题 日志和归档重合问题</title>
+      <link href="/2020/01/15/next%E4%B8%BB%E9%A2%98-%E6%97%A5%E5%BF%97%E5%92%8C%E5%BD%92%E6%A1%A3%E9%87%8D%E5%90%88%E9%97%AE%E9%A2%98/"/>
+      <url>/2020/01/15/next%E4%B8%BB%E9%A2%98-%E6%97%A5%E5%BF%97%E5%92%8C%E5%BD%92%E6%A1%A3%E9%87%8D%E5%90%88%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2020/01/15/lX0Yct.png" alt="lX0Yct.png"></p><p>如图篇所示，其点开之后报错，Cannot GET /archives/%7C%7C%20archive/</p><p><img src="https://s2.ax1x.com/2020/01/15/lX0cj0.png" alt="lX0cj0.png"></p><p>点击归档之后没有问题，正常显示，</p><p>证明不是格式空格问题，</p><p><img src="https://s2.ax1x.com/2020/01/15/lX64UK.png" alt="lX64UK.png"></p><p>只要在archives前加上#，注销掉，菜单上归档消失但点击日志就正常了。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>可移植性</title>
       <link href="/2020/01/04/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7/"/>
       <url>/2020/01/04/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7/</url>
@@ -81,6 +94,12 @@
       
       
       
+        <tags>
+            
+            <tag> crypt </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -96,7 +115,7 @@
       
         <tags>
             
-            <tag> linux  crypt </tag>
+            <tag> -linux -crypt </tag>
             
         </tags>
       
@@ -193,19 +212,6 @@
           <category> about </category>
           
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello-world</title>
-      <link href="/2019/11/26/hello-world/"/>
-      <url>/2019/11/26/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>title: python–day1<br>date: 2019-12-12 16:28:12<br>tags: python</p>]]></content>
-      
       
       
     </entry>
