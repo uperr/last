@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python-json-beautifulsoup</title>
+      <link href="/2020/01/17/python-json/"/>
+      <url>/2020/01/17/python-json/</url>
+      
+        <content type="html"><![CDATA[<p>dump序列</p><p>loads  逆过程</p><p>配合显示字典</p><p>requests 爬 github网站的code等</p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="comment">#auther:loop</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> loop_json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">key = <span class="string">"baidu"</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://api.github.com/search/code?q=%s"</span> % key</span><br><span class="line"></span><br><span class="line">TOKEN = <span class="string">'00e2b39028d493c56fc2737f7a9fa11011d02ef0'</span></span><br><span class="line">headers = &#123;<span class="string">"Authorization"</span>: <span class="string">"token %s"</span> % TOKEN&#125;</span><br><span class="line">params = &#123;<span class="string">"per_page"</span>: <span class="number">10</span>, <span class="string">"page"</span>: <span class="number">0</span>&#125;</span><br><span class="line"><span class="comment"># = requests.get(url, headers=headers, params=params)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#d = r.json()</span></span><br><span class="line"></span><br><span class="line">loop_json.abc()</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"test"</span></span><br></pre></td></tr></table></figure><p>Token是账户设置的一个值</p><p>key是查找内容</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abc</span><span class="params">(ddd)</span>:</span></span><br><span class="line">    _dic = &#123;<span class="string">"name"</span>:<span class="string">"loop"</span>, <span class="string">"age"</span>:<span class="string">"12"</span>&#125;</span><br><span class="line"></span><br><span class="line">    s = json.dumps(_dic, indent=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#print type(s)</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"abc"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#d = json.loads(s)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#print d</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:<span class="comment">#只有主函数是本文件才会运行</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"loop"</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python4</title>
       <link href="/2020/01/16/python4/"/>
       <url>/2020/01/16/python4/</url>
@@ -13,7 +38,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> python-requests </category>
           
       </categories>
       
